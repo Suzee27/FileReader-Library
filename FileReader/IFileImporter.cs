@@ -2,7 +2,7 @@
 
 namespace FileReader
 {
-    public interface IFileImport<T>
+    public interface IFileImporter<T>
     {
          T ImportFile(string filePath);
     }

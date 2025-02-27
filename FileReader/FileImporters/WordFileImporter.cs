@@ -2,7 +2,7 @@
 
 namespace FileReader.FileImporters
 {
-    public class WordFileImporter : IFileImport<string>
+    public class WordFileImporter : IFileImporter<string>
     {
         public string ImportFile(string filePath)
         {

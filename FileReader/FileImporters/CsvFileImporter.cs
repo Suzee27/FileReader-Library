@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace FileReader.FileImporters
 {
-    public class CsvFileImporter : IFileImport<List<string>>
+    public class CsvFileImporter : IFileImporter<List<string>>
     {
         public List<string> ImportFile(string filePath)
         {

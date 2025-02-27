@@ -2,7 +2,7 @@
 
 namespace FileReader.FileImporters
 {
-    public class ExcelFileImporter : IFileImport<List<List<string>>>
+    public class ExcelFileImporter : IFileImporter<List<List<string>>>
     {
         public List<List<string>> ImportFile(string filePath)
         {

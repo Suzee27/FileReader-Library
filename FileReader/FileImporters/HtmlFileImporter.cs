@@ -2,7 +2,7 @@
 
 namespace FileReader.FileImporters
 {
-    public class HtmlFileImporter : IFileImport<string>
+    public class HtmlFileImporter : IFileImporter<string>
     {
         public string ImportFile(string filePath)
         {

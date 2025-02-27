@@ -1,6 +1,6 @@
 ﻿namespace FileReader.FileImporters
 {
-    public class TxtFileImporter : IFileImport<List<string>>
+    public class TxtFileImporter : IFileImporter<List<string>>
     {
         public List<string> ImportFile(string filePath)
         {
