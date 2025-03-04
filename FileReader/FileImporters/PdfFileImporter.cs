@@ -1,7 +1,11 @@
-﻿namespace FileReader.FileImporters
+﻿using FileReader.ImportInterface;
+
+namespace FileReader.FileImporters
 {
     public class PdfFileImporter : IFileImporter<List<string>>
     {
+        public bool CanImport(string filePath) => filePath.EndsWith(".pdf");
+
         public List<string> ImportFile(string filePath)
         {
             var texts = new List<string>();

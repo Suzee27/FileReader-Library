@@ -1,9 +1,12 @@
-﻿using HtmlAgilityPack;
+﻿using FileReader.ImportInterface;
+using HtmlAgilityPack;
 
 namespace FileReader.FileImporters
 {
     public class HtmlFileImporter : IFileImporter<string>
     {
+        public bool CanImport(string filePath) => filePath.EndsWith(".html");
+
         public string ImportFile(string filePath)
         {
             var content = File.ReadAllText(filePath);

@@ -1,9 +1,16 @@
 ﻿using ClosedXML.Excel;
+using FileReader.ImportInterface;
 
 namespace FileReader.FileImporters
 {
     public class ExcelFileImporter : IFileImporter<List<List<string>>>
     {
+        public bool CanImport(string filePath)
+        {
+            string extention = Path.GetExtension(filePath);
+            return extention == ".xls" || extention == ".xlsx";
+        }
+        
         public List<List<string>> ImportFile(string filePath)
         {
             var workbook = new XLWorkbook(filePath);
