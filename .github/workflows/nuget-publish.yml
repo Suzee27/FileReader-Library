@@ -1,0 +1,20 @@
+name: Publish to NuGet
+
+on:
+  push:
+    tags:
+      - 'v*' # Only runs when a tag like v1.0.0 is pushed
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0'
+      - name: Build and Pack
+        run: dotnet pack --configuration Release -o ./output
+      - name: Publish to NuGet
+        run: dotnet nuget push ./output/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
